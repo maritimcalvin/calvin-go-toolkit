@@ -184,5 +184,4 @@ These cover ~90% of first-time issues. If you hit something else, prompt AI: "Fi
 3. A Tour of Go: https://go.dev/tour/welcome/1
 4. Go by Example (HTTP): https://gobyexample.com/http-servers
 5. GitHub Repo: https://github.com/maritimcalvin/calvin-go-toolkit
-6. Tested on: macOS (MacBook Air), Nairobi, February 19, 2026
 
