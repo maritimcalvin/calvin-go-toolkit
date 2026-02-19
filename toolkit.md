@@ -91,7 +91,8 @@ func main() {
     http.HandleFunc("/", handler)
     fmt.Println("Server is running on http://localhost:8080")
     http.ListenAndServe(":8080", nil)
-}```
+}
+```
 
 Run (all OS):
 textgo run main.go
