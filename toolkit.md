@@ -111,13 +111,67 @@ Prompt 3: "Simplest net/http Hello World server with comments" → Base code; cu
 Prompt 4: "Fix 'stat main.go: no such file' error on macOS" → Checked dir/file existence. Solved my issue.
 
 AI turned hours of confusion into quick wins.
-7. Common Issues & Fixes
+## 7. Common Issues & Fixes
 
-"stat main.go: no such file or directory" → Wrong folder/file missing. Fix: ls (macOS/Linux) or dir (Windows); ensure main.go in current dir.
-"go: command not found" → PATH not set. Fix: Reopen terminal/Command Prompt; add Go bin to PATH.
-Browser "connection refused" → Server not running/wrong URL. Fix: Run go run main.go; use http://localhost:8080 or 127.0.0.1:8080.
-Installer PATH issues (Windows) → Restart Command Prompt or add manually.
+Here are the most frequent problems beginners face when following this guide, along with step-by-step fixes. These come from my own debugging + AI prompt experiments + common reports online.
 
+- **"go: command not found" or "'go' is not recognized as an internal or external command"**  
+  → Go binary not in PATH after installation.  
+  **macOS/Linux fix:**  
+  - Close and reopen Terminal.  
+  - Or add manually: `export PATH=$PATH:/usr/local/go/bin` → add to `~/.zshrc` (macOS) or `~/.bashrc` → `source ~/.zshrc` / `source ~/.bashrc`.  
+  **Windows fix:**  
+  - Restart Command Prompt/PowerShell.  
+  - Or manually add `C:\Program Files\Go\bin` to System Environment Variables → Path → OK → restart terminal.  
+  Test: `go version`
+
+- **"stat main.go: no such file or directory"**  
+  → You're running `go run main.go` but the file isn't in the current directory (very common!).  
+  **Fix:**  
+  - Run `ls` (macOS/Linux) or `dir` (Windows) to list files — make sure `main.go` is listed.  
+  - If not: Use `cd` to navigate to the correct folder (`cd calvin-go-toolkit`).  
+  - Or recreate the file: `nano main.go` / open in VS Code → paste code → save.  
+  - Tip: Always run `pwd` (macOS/Linux) or `cd` (Windows) to confirm your location.
+
+- **Browser shows "This site can’t be reached" / "ERR_CONNECTION_REFUSED" / "connection refused"**  
+  → Server isn't running, wrong port, or firewall.  
+  **Fix:**  
+  - Make sure `go run main.go` is still running in the terminal (don't close the window).  
+  - Use correct URL: http://localhost:8080 or http://127.0.0.1:8080 (not https).  
+  - Try a different browser.  
+  - macOS/Linux: Check if port 8080 is blocked (`lsof -i :8080`).  
+  - Windows: Temporarily disable Windows Defender Firewall or add exception for Go.
+
+- **"listen tcp :8080: bind: address already in use"**  
+  → Another program (or previous instance) is using port 8080.  
+  **Fix:**  
+  - Stop the old server (Ctrl+C in its terminal).  
+  - Or change port in code: `:8081` instead of `:8080` → save → rerun.  
+  - macOS/Linux: Find and kill process: `lsof -i :8080` → `kill -9 <PID>`.  
+  - Windows: `netstat -ano | findstr :8080` → `taskkill /PID <number> /F`.
+
+- **"module declares its path as: calvin-go-toolkit but was found in .../different-name"**  
+  → Folder name doesn't match `go mod init` name.  
+  **Fix:**  
+  - Rename folder to match: `mv old-name calvin-go-toolkit`  
+  - Or re-init: `go mod init calvin-go-toolkit` in the correct folder.
+
+- **"go mod init: modules disabled by GO111MODULE=off" (rare in 2026)**  
+  → Old environment variable.  
+  **Fix:** Remove or set `export GO111MODULE=on` / `set GO111MODULE=on` (Windows) → restart terminal.
+
+- **VS Code shows red squiggles / "cannot find package" warnings**  
+  → Go extension not installed or needs restart.  
+  **Fix:**  
+  - Install "Go" extension by Go Team at Google in VS Code.  
+  - Run `go install golang.org/x/tools/gopls@latest` (needs internet).  
+  - Restart VS Code or run "Go: Install/Update Tools" command (Cmd+Shift+P → type "Go Install").
+
+- **Permission denied when extracting tar.gz on Linux**  
+  → Missing sudo.  
+  **Fix:** Use `sudo tar -C /usr/local -xzf go1.26.0.linux-amd64.tar.gz`
+
+These cover ~90% of first-time issues. If you hit something else, prompt AI: "Fix this Go error on [your OS]: [error message]".
 8. References
 
 1. Official Install Guide: https://go.dev/doc/install
