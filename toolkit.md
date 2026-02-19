@@ -94,7 +94,7 @@ func main() {
 }
 ```
 
-Run (all OS):
+5. Run (all OS):
 textgo run main.go
 
 Browser → http://localhost:8080
@@ -120,10 +120,10 @@ Installer PATH issues (Windows) → Restart Command Prompt or add manually.
 
 8. References
 
-Official Install Guide: https://go.dev/doc/install
-Go 1.26 Release Notes: https://go.dev/doc/go1.26
-A Tour of Go: https://go.dev/tour/welcome/1
-Go by Example (HTTP): https://gobyexample.com/http-servers
-GitHub Repo: https://github.com/maritimcalvin/calvin-go-toolkit
-Tested on: macOS (MacBook Air), Nairobi, February 19, 2026
+1. Official Install Guide: https://go.dev/doc/install
+2. Go 1.26 Release Notes: https://go.dev/doc/go1.26
+3. A Tour of Go: https://go.dev/tour/welcome/1
+4. Go by Example (HTTP): https://gobyexample.com/http-servers
+5. GitHub Repo: https://github.com/maritimcalvin/calvin-go-toolkit
+6. Tested on: macOS (MacBook Air), Nairobi, February 19, 2026
 
