@@ -36,6 +36,7 @@ As of February 2026, the latest stable version is **Go 1.26** (released February
      sudo rm -rf /usr/local/go
      # Extract (replace with your downloaded file name, e.g., go1.26.linux-amd64.tar.gz)
      sudo tar -C /usr/local -xzf go1.26.linux-amd64.tar.gz
+3.**Verify Install**
 Open a **new** Terminal window and verify:
 go version
 textExpected: `go version go1.26.0 darwin/arm64` 
@@ -91,5 +92,36 @@ func main() {
     fmt.Println("Server is running on http://localhost:8080")
     http.ListenAndServe(":8080", nil)
 }
+Run (all OS):
+textgo run main.go
 
+Browser → http://localhost:8080
+Expected:textHello, Moringa AI Essentials! 🚀
+You requested: /
+Stop: Ctrl+C in terminal.
+
+6. AI Prompt Journal
+Used AI (ai.moringaschool.com/ChatGPT) for fast learning.
+
+Prompt 1: "Step-by-step install Go 1.26 on macOS/Windows/Linux including verify" → Guided downloads/PATH. Very helpful.
+Prompt 2: "Go modules basics + project init command" → Explained go mod init. Clear.
+Prompt 3: "Simplest net/http Hello World server with comments" → Base code; customized.
+Prompt 4: "Fix 'stat main.go: no such file' error on macOS" → Checked dir/file existence. Solved my issue.
+
+AI turned hours of confusion into quick wins.
+7. Common Issues & Fixes
+
+"stat main.go: no such file or directory" → Wrong folder/file missing. Fix: ls (macOS/Linux) or dir (Windows); ensure main.go in current dir.
+"go: command not found" → PATH not set. Fix: Reopen terminal/Command Prompt; add Go bin to PATH.
+Browser "connection refused" → Server not running/wrong URL. Fix: Run go run main.go; use http://localhost:8080 or 127.0.0.1:8080.
+Installer PATH issues (Windows) → Restart Command Prompt or add manually.
+
+8. References
+
+Official Install Guide: https://go.dev/doc/install
+Go 1.26 Release Notes: https://go.dev/doc/go1.26
+A Tour of Go: https://go.dev/tour/welcome/1
+Go by Example (HTTP): https://gobyexample.com/http-servers
+GitHub Repo: https://github.com/maritimcalvin/calvin-go-toolkit
+Tested on: macOS (MacBook Air), Nairobi, February 19, 2026
 
