@@ -67,7 +67,7 @@ mkdir calvin-go-toolkit
 cd calvin-go-toolkit
 go mod init calvin-go-toolkit
 
-5. Minimal Working Example
+## 5. Minimal Working Example
 
 **What the example does:** Basic HTTP server using `net/http`. Visit http://localhost:8080 to see the greeting.
 
@@ -94,7 +94,7 @@ func main() {
 }
 ```
 
-##5. Run (all OS):
+5. Run (all OS):
 textgo run main.go
 
 Browser → http://localhost:8080
@@ -102,7 +102,7 @@ Expected:textHello, Moringa AI Essentials! 🚀
 You requested: /
 Stop: Ctrl+C in terminal.
 
-##6. AI Prompt Journal
+## 6. AI Prompt Journal
 Used AI (ai.moringaschool.com/ChatGPT) for fast learning.
 
 Prompt 1: "Step-by-step install Go 1.26 on macOS/Windows/Linux including verify" → Guided downloads/PATH. Very helpful.
@@ -173,7 +173,7 @@ Here are the most frequent problems beginners face when following this guide, al
 
 These cover ~90% of first-time issues. If you hit something else, prompt AI: "Fix this Go error on [your OS]: [error message]".
 
-##8. References
+## 8. References
 
 1. Official Install Guide: https://go.dev/doc/install
 2. Go 1.26 Release Notes: https://go.dev/doc/go1.26
