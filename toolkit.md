@@ -106,11 +106,15 @@ Stop: Ctrl+C in terminal.
 Used AI (ai.moringaschool.com/ChatGPT) for fast learning.
 
 Prompt 1: "Step-by-step install Go 1.26 on macOS/Windows/Linux including verify" → Guided downloads/PATH. Very helpful.
+
 Prompt 2: "Go modules basics + project init command" → Explained go mod init. Clear.
+
 Prompt 3: "Simplest net/http Hello World server with comments" → Base code; customized.
+
 Prompt 4: "Fix 'stat main.go: no such file' error on macOS" → Checked dir/file existence. Solved my issue.
 
 AI turned hours of confusion into quick wins.
+
 ## 7. Common Issues & Fixes
 
 Here are the most frequent problems beginners face when following this guide, along with step-by-step fixes. These come from my own debugging + AI prompt experiments + common reports online.
